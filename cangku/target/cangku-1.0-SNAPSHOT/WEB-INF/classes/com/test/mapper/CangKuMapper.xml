@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.test.mapper.CangKuMapper">
+
+
+    <insert id="addCangKu">
+        insert into cangku ( num, call, manager, lei, position, storage)
+        values (#{num}, #{call}, #{manager}, #{lei}, #{position},
+                #{storage});
+    </insert>
+
+
+    <delete id="deleteBynum">
+        delete from cangku where num = #{num}
+    </delete>
+
+    <update id="updateCangKu">
+        update cangku
+        <set>
+
+            <if test="storage != null and storage != '' ">
+                storage = #{storage},
+            </if>
+
+        </set>
+        where num = #{num};
+    </update>
+
+
+    <select id="Findbytwo" resultType="com.test.pojo.CangKu">
+        select *
+        from cangku
+        <where>
+            <choose>
+
+                <when test="num != null and num != '' ">
+                    num like #{num}
+                </when>
+
+                <when test="call != null and call != '' ">
+                    call like #{call}
+                </when>
+
+            </choose>
+        </where>
+    </select>
+
+    <select id="selectAll" resultType="com.test.pojo.CangKu">
+        select * from cangku;
+    </select>
+
+    <select id="Findbycall" resultType="com.test.pojo.CangKu">
+        select *
+        from cangku
+        where call = #{call}
+    </select>
+
+    <select id="Findbynum" resultType="com.test.pojo.CangKu">
+        select *
+        from cangku
+        where num = #{num}
+    </select>
+
+</mapper>

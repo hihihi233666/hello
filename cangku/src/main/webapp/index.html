@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>身份选择</title>
+    <style>
+        /* 基础样式重置 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: '微软雅黑', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            min-height: 100vh;
+        }
+
+        /* 标题样式 */
+        h1 {
+            text-align: center;
+            color: #2c3e50;
+            font-size: 2.8rem;
+            padding: 2rem 0;
+            text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+            position: relative;
+        }
+
+        h1::after {
+            content: '';
+            display: block;
+            width: 60px;
+            height: 4px;
+            background: #3498db;
+            margin: 1rem auto;
+            border-radius: 2px;
+        }
+
+        /* 按钮容器样式 */
+        .button-container {
+            max-width: 800px;
+            margin: 2rem auto;
+            padding: 2rem;
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            background: rgba(255,255,255,0.95);
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* 按钮通用样式 */
+        .action-btn {
+            padding: 1.5rem;
+            border: none;
+            border-radius: 12px;
+            background: linear-gradient(145deg, #3498db, #2980b9);
+            color: white;
+            font-size: 1.1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.8rem;
+        }
+
+        .action-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(52,152,219,0.4);
+            background: linear-gradient(145deg, #2980b9, #3498db);
+        }
+
+        .action-btn:active {
+            transform: translateY(1px);
+        }
+
+        /* 响应式设计 */
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 2rem;
+            }
+
+            .button-container {
+                margin: 1rem;
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* 装饰元素 */
+        .decorative-line {
+            height: 4px;
+            background: linear-gradient(90deg, transparent, #3498db, transparent);
+            margin: 2rem auto;
+            width: 80%;
+        }
+    </style>
+    <!-- 引入字体图标 -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+
+<body>
+<h1>身份选择</h1>
+<div class="decorative-line"></div>
+
+<div class="button-container">
+    <button class="action-btn" onclick="addCangKu()">
+        <i class="fas fa-user-plus"></i>
+        管理员
+    </button>
+    <button class="action-btn" onclick="updateCangKu()">
+        <i class="fas fa-user-edit"></i>
+        仓库管理人员
+    </button>
+
+</div>
+
+<script>
+    function addCangKu() { window.location.href = "login.html"; }
+    function updateCangKu() { window.location.href = "login2.html"; }
+
+</script>
+</body>
+
+</html>

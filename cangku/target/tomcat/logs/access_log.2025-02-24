@@ -1,0 +1,5 @@
+0:0:0:0:0:0:0:1 - - [24/Feb/2025:14:26:32 +0800] "GET /cangku HTTP/1.1" 302 - http-bio-8080-exec-1 0
+0:0:0:0:0:0:0:1 - - [24/Feb/2025:14:26:32 +0800] "GET /cangku/ HTTP/1.1" 304 - http-bio-8080-exec-3 0
+0:0:0:0:0:0:0:1 - - [24/Feb/2025:14:26:33 +0800] "GET /favicon.ico HTTP/1.1" 404 - http-bio-8080-exec-4 0
+0:0:0:0:0:0:0:1 - - [24/Feb/2025:14:26:34 +0800] "GET /cangku/login.html HTTP/1.1" 304 - http-bio-8080-exec-5 2
+0:0:0:0:0:0:0:1 - - [24/Feb/2025:14:26:35 +0800] "POST /cangku/loginServlet HTTP/1.1" 200 3967 http-bio-8080-exec-6 373
